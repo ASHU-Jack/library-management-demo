@@ -1,0 +1,42 @@
+<div class="container-grid">
+    <h3><span class="badge badge-primary">Borrowed Book Details</span></h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="font-size: 20px;">Book_id</th>
+                <th style="font-size: 20px;">Book_title</th>
+                <th style="font-size: 20px;">Book_auther</th>
+                <th style="font-size: 20px;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td style="font-size: 20px;">{{book.id}} </td>
+                <td style="font-size: 20px;">{{book.title}}</td>
+                <td style="font-size: 20px;">{{book.author}}</td>
+                <td>
+                    <!-- <button type="button" class="btn btn-danger" (click)="deleteRow(user.id)">Delete Book</button>&nbsp;&nbsp; -->
+                    <!-- <button type="button" class="btn btn-primary" (click)="update(user.id)">Update Book Details</button>&nbsp;&nbsp; -->
+                    <button type="button" class="btn btn-dark" (click)="viewDetails(book.id)">Get Book Details</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="card">
+    <h3><span class="badge badge-primary">All Book Details</span></h3>
+    <table>
+        <tbody *ngFor="let book of booksArray" style="border-color: transparent;">
+            <td>{{book.title}}</td>
+            <td>
+                <button type="button" class="btn btn-dark" (click)="viewDetails(book.id)">Get Book Details</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-success" (click)="borrowBook(book.id)">Borrow Books</button>
+            </td>
+        </tbody>
+    </table>
+
+</div>
+<button class="btn btn-primary" (click)="goBack()">Go Back</button>

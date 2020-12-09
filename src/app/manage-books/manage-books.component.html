@@ -1,0 +1,11 @@
+<div>
+    <p>work in progress!</p>
+    <button (click)="onClick()">Borrow Books</button>
+</div>
+
+
+<ul [ngClass]="'home'">
+    <li *ngFor="let user of userBorrowed">
+        Username: {{user.id}}| Password: {{user.bookIdArray}}
+    </li>
+</ul>

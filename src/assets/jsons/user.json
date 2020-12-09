@@ -1,0 +1,25 @@
+[{
+        "id": 1,
+        "username": "ashu",
+        "password": "ashu",
+        "loginAs": "member"
+    },
+    {
+        "id": 2,
+        "username": "ankit",
+        "password": "ankit",
+        "loginAs": "librarian"
+    },
+    {
+        "id": 3,
+        "username": "yash",
+        "password": "yash",
+        "loginAs": "member"
+    },
+    {
+        "id": 4,
+        "username": "neha",
+        "password": "neha",
+        "loginAs": "librarian"
+    }
+]

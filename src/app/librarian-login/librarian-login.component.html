@@ -1,0 +1,62 @@
+<header id="header">
+    <div class="container">
+        <div class="header-container d-flex align-items-center">
+            <div class="logo mr-auto">
+                <h1 class="text-light"><a href="#"><span>{{title}}</span></a></h1>
+            </div>
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="get-started"><a routerLink="/home" routerLinkActive="active-link" class="active">Home</a></li>
+                    <li class="get-started"><a routerLink="/add-book" routerLinkActive="active-link">Add Book</a></li>
+                    <li class="get-started"><a routerLink="/manage-book" routerLinkActive="active-link">Manage Book</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div>
+    <div class="background">
+        <div class="main">
+            <div class="card">
+                <div class="input-wrap">
+                    <img src="../assets/img/Group%201.png" width="auto" height="30px" class="search">
+                    <input type="search" [(ngModel)]=bookName placeholder="Search your book here!">
+                </div>
+                <div *ngIf="(books | filter: bookName) as bookArray">
+                    <div *ngFor="let book of bookArray" class="book">
+                        <a [routerLink]="['/view-detail', book.id]">{{book.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Book Details</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="font-size: 20px;">Book_id</th>
+                    <th style="font-size: 20px;">Book_title</th>
+                    <th style="font-size: 20px;">Book_auther</th>
+                    <th style="font-size: 20px;">Number Of Books</th>
+                    <th style="font-size: 20px;">Rack Number</th>
+                    <th style="font-size: 20px;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of books">
+                    <td style="font-size: 20px; ">{{book.id}} </td>
+                    <td style="font-size: 20px;">{{book.title}}</td>
+                    <td style="font-size: 20px;">{{book.author}}</td>
+                    <td style="font-size: 20px;">{{book.numberOfCopy}}</td>
+                    <td style="font-size: 20px;">{{book.rackNumber}}</td>
+                    <td>
+                        <button type="button" class="btn btn-dark" (click)="viewDetails(book.id)">Get Book Details</button>
+                    </td>
+
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

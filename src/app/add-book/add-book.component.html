@@ -1,0 +1,47 @@
+<div class="background">
+    <div class="container register">
+        <form (ngSubmit)="onSubmit()" [formGroup]="bookForm">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">Add Book</h3>
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                Book Title: <input formControlName="title" placeholder="Title" class="form-control" value="">
+                                <label *ngIf="title.touched && title.invalid" class="alert alert-danger"> Title is
+                                        required. </label>
+                            </div>
+                            <div class="form-group">
+                                Author Name: <input formControlName="author" placeholder="Author Name *" class="form-control" value="">
+                                <label *ngIf="author.touched && author.invalid" class="alert alert-danger"> Author Name is
+                                        required. </label>
+                            </div>
+                            <div class="form-group">
+                                Description: <input formControlName="description" placeholder="Describe about the book *" class="form-control" value="">
+                                <label *ngIf="description.touched && description.invalid" class="alert alert-danger">
+                                Describe about the book. </label>
+                            </div>
+                            <div class="form-group">
+                                RackNumber: <input type="number" formControlName="rackNumber" placeholder="Rack Number *" class="form-control" value="">
+                                <div *ngIf="rackNumber.touched && rackNumber.invalid" class="alert alert-danger">
+                                    Enter rack number.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                Number Of Copy: <input type="number" formControlName="numberOfCopy" placeholder="Number Of Copy *" class="form-control" value="">
+                                <div *ngIf="numberOfCopy.touched && numberOfCopy.invalid" class="alert alert-danger">
+                                    Enter number of copies.
+                                </div>
+                            </div>
+                            <input type="submit" class="btnRegister" value="Register" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="btn-group">
+        <br>
+        <button (click)="goBack()">Go Back</button>
+    </div>
+</div>

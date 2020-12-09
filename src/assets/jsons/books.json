@@ -1,0 +1,37 @@
+[{
+        "id": 1,
+        "title": "Core Java",
+        "author": "James Gosling",
+        "description": "Core Java Tutorials",
+        "rackNumber": 1,
+        "numberOfCopy": 4,
+        "checkedOutBy": {}
+    },
+    {
+        "id": 2,
+        "title": "Angular",
+        "author": "Brad Green",
+        "description": "Learn Angular",
+        "rackNumber": 1,
+        "numberOfCopy": 4,
+        "checkedOutBy": {}
+    },
+    {
+        "id": 3,
+        "title": "Java Persistence with Hibernate",
+        "author": "Christian Baue",
+        "description": "Hibernate Examples",
+        "rackNumber": 1,
+        "numberOfCopy": 4,
+        "checkedOutBy": {}
+    },
+    {
+        "id": 4,
+        "title": "Effective TypeScript",
+        "author": "Dan Vanderkam",
+        "description": "TypeScript Tutorials",
+        "rackNumber": 1,
+        "numberOfCopy": 4,
+        "checkedOutBy": {}
+    }
+]

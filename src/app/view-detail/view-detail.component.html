@@ -1,0 +1,24 @@
+<div class="background">
+    <h2>View Detail</h2>
+    <ul [ngClass]="'view-detail'">
+        <li>
+            Id: {{book?.id}}
+        </li>
+        <li>
+            Name: {{book?.title}}
+        </li>
+        <li>
+            Author: {{book?.author}}
+        </li>
+        <li>
+            Description: {{book?.description}}
+        </li>
+        <li>
+            Rack Number: {{book?.rackNumber}}
+        </li>
+    </ul>
+    <div>
+        <button (click)="goBack()">Go Back</button>
+        <button (click)="borrowBook()" *ngIf="setVisible">Borrow Books</button>
+    </div>
+</div>

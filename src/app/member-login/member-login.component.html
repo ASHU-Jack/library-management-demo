@@ -1,0 +1,48 @@
+<header id="header">
+    <div class="container">
+        <div class="header-container d-flex align-items-center">
+            <div class="logo mr-auto">
+                <h1 class="text-light"><a href="#"><span>{{title}}</span></a></h1>
+            </div>
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="get-started"><a routerLink="/home" routerLinkActive="active-link">Home</a></li>
+                    <li class="get-started"><a routerLink="/borrow-book" routerLinkActive="active-link">Borrow Books</a></li>
+                    <li class="get-started"><a routerLink="/return-book" routerLinkActive="active-link">Return Book</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="background">
+    <div class="main">
+        <div class="card">
+            <div class="input-wrap">
+                <img src="../assets/img/Group%201.png" width="auto" height="30px" class="search">
+                <input type="search" [(ngModel)]=bookName placeholder="Search your book here!">
+            </div>
+
+            <div *ngIf="(books | filter: bookName) as bookArray">
+                <h3><span class="badge badge-primary">Available Books Detail</span></h3>
+                <div *ngFor="let book of bookArray" class="book">
+                    <a [routerLink]="['/view-detail', book.id]">{{book.title}}</a>|
+                    <button (click)="borrowBook(book.id)">Borrow Books</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h3><span class="badge badge-primary">Borrowed Books Detail</span></h3>
+            <ng-container *ngIf="borrowedBook.length > 0; else elseTemplate">
+                <div *ngFor="let book of borrowedBook" class="book">
+                    <a [routerLink]="['/view-detail', book.id]">{{book.title}}</a>
+                </div>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <div class="alert alert-danger" role="alert">
+                    No details found!
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
